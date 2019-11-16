@@ -26,7 +26,7 @@ AppAsset::register($this);
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container box_1620">
 
-                <a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
+                <a class="navbar-brand logo_h" href="/"><img src="img/logo.png" alt=""></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -35,7 +35,7 @@ AppAsset::register($this);
 
                 <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                     <ul class="nav navbar-nav menu_nav">
-                        <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="category.html">Category</a></li>
                         <li class="nav-item"><a class="nav-link" href="archive.html">Archive</a></li>
                         <li class="nav-item submenu dropdown">
@@ -57,26 +57,16 @@ AppAsset::register($this);
             </div>
         </nav>
     </div>
-    <div class="logo_part">
-        <div class="container">
-            <a class="logo" href="#"><img src="img/logo.png" alt=""></a>
-        </div>
-    </div>
 </header>
-<section class="home_banner_area">
-    <div class="container">
-        <div class="row">
 
-        </div>
-    </div>
-</section>
-<section class="blog_area p_120">
+<section class="blog_area">
     <div class="container">
         <div class="row">
             <?= $content; ?>
         </div>
     </div>
 </section>
+
 <footer class="footer-area p_120">
     <div class="container">
         <div class="row">
@@ -131,8 +121,8 @@ AppAsset::register($this);
         </div>
         <div class="row footer-bottom d-flex justify-content-between align-items-center">
             <p class="col-lg-12 footer-text text-center">
-                Copyright ©<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript">document.write(new Date().getFullYear());</script>2019 All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com/" target="_blank">Colorlib</a>
-
+                Copyright &copy; <?= date("Y"); ?> All rights reserved | This website is made
+                by <a href="http://rozmetovjasur.uz" target="_blank">rozmetovjasur</a>
             </p>
         </div>
     </div>

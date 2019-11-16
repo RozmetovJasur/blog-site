@@ -1,4 +1,3 @@
-
 <div class="col-lg-8">
     <div class="blog_left_sidebar">
         <article class="blog_style1">
@@ -12,7 +11,9 @@
                         <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> March 14, 2018</a>
                         <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
                     </div>
-                    <a href="#"><h4>Nest Protect: 2nd Gen Smoke + CO Alarm</h4></a>
+                    <a href="#">
+                        <h4>Nest Protect: 2nd Gen Smoke + CO Alarm</h4>
+                    </a>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
                     <a class="blog_btn" href="#">Read More</a>
                 </div>
@@ -31,7 +32,9 @@
                                 <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> March 14, 2018</a>
                                 <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
                             </div>
-                            <a href="single-blog.html"><h4>Nest Protect 2nd Gen Smoke CO Alarm</h4></a>
+                            <a href="single-blog.html">
+                                <h4>Nest Protect 2nd Gen Smoke CO Alarm</h4>
+                            </a>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidid unt ut labore et dolore magna aliqua.</p>
                             <a class="blog_btn" href="#">Read More</a>
                         </div>
@@ -50,7 +53,9 @@
                                 <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> March 14, 2018</a>
                                 <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
                             </div>
-                            <a href="single-blog.html"><h4>Nest Protect 2nd Gen Smoke CO Alarm</h4></a>
+                            <a href="single-blog.html">
+                                <h4>Nest Protect 2nd Gen Smoke CO Alarm</h4>
+                            </a>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidid unt ut labore et dolore magna aliqua.</p>
                             <a class="blog_btn" href="#">Read More</a>
                         </div>
@@ -69,7 +74,9 @@
                         <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> March 14, 2018</a>
                         <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
                     </div>
-                    <a href="single-blog.html"><h4>Nest Protect: 2nd Gen Smoke CO Alarm</h4></a>
+                    <a href="single-blog.html">
+                        <h4>Nest Protect: 2nd Gen Smoke CO Alarm</h4>
+                    </a>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
                     <a class="blog_btn" href="#">Read More</a>
                 </div>
@@ -88,7 +95,9 @@
                                 <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> March 14, 2018</a>
                                 <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
                             </div>
-                            <a href="single-blog.html"><h4>Nest Protect 2nd Gen Smoke CO Alarm</h4></a>
+                            <a href="single-blog.html">
+                                <h4>Nest Protect 2nd Gen Smoke CO Alarm</h4>
+                            </a>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidid unt ut labore et dolore magna aliqua.</p>
                             <a class="blog_btn" href="#">Read More</a>
                         </div>
@@ -107,7 +116,9 @@
                                 <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> March 14, 2018</a>
                                 <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
                             </div>
-                            <a href="single-blog.html"><h4>Nest Protect 2nd Gen Smoke CO Alarm</h4></a>
+                            <a href="single-blog.html">
+                                <h4>Nest Protect 2nd Gen Smoke CO Alarm</h4>
+                            </a>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidid unt ut labore et dolore magna aliqua.</p>
                             <a class="blog_btn" href="#">Read More</a>
                         </div>
@@ -128,7 +139,9 @@
                                 <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> March 14, 2018</a>
                                 <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
                             </div>
-                            <a href="single-blog.html"><h4>Nest Protect 2nd Gen Smoke CO Alarm</h4></a>
+                            <a href="single-blog.html">
+                                <h4>Nest Protect 2nd Gen Smoke CO Alarm</h4>
+                            </a>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidid unt ut labore et dolore magna aliqua.</p>
                             <a class="blog_btn" href="#">Read More</a>
                         </div>
@@ -147,7 +160,9 @@
                                 <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> March 14, 2018</a>
                                 <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
                             </div>
-                            <a href="single-blog.html"><h4>Nest Protect 2nd Gen Smoke CO Alarm</h4></a>
+                            <a href="single-blog.html">
+                                <h4>Nest Protect 2nd Gen Smoke CO Alarm</h4>
+                            </a>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidid unt ut labore et dolore magna aliqua.</p>
                             <a class="blog_btn" href="#">Read More</a>
                         </div>
@@ -159,9 +174,9 @@
             <ul class="pagination">
                 <li class="page-item">
                     <a href="#" class="page-link" aria-label="Previous">
-<span aria-hidden="true">
-<span class="lnr lnr-chevron-left"></span>
-</span>
+               <span aria-hidden="true">
+               <span class="lnr lnr-chevron-left"></span>
+               </span>
                     </a>
                 </li>
                 <li class="page-item"><a href="#" class="page-link">01</a></li>
@@ -171,9 +186,9 @@
                 <li class="page-item"><a href="#" class="page-link">09</a></li>
                 <li class="page-item">
                     <a href="#" class="page-link" aria-label="Next">
-<span aria-hidden="true">
-<span class="lnr lnr-chevron-right"></span>
-</span>
+               <span aria-hidden="true">
+               <span class="lnr lnr-chevron-right"></span>
+               </span>
                     </a>
                 </li>
             </ul>
@@ -186,8 +201,8 @@
             <div class="input-group">
                 <input type="text" class="form-control" placeholder="Search Posts">
                 <span class="input-group-btn">
-<button class="btn btn-default" type="button"><i class="lnr lnr-magnifier"></i></button>
-</span>
+            <button class="btn btn-default" type="button"><i class="lnr lnr-magnifier"></i></button>
+            </span>
             </div>
             <div class="br"></div>
         </aside>
@@ -209,28 +224,36 @@
             <div class="media post_item">
                 <img src="/template/img/blog/popular-post/post1.jpg" alt="post">
                 <div class="media-body">
-                    <a href="blog-details.html"><h3>Space The Final Frontier</h3></a>
+                    <a href="blog-details.html">
+                        <h3>Space The Final Frontier</h3>
+                    </a>
                     <p>02 Hours ago</p>
                 </div>
             </div>
             <div class="media post_item">
                 <img src="/template/img/blog/popular-post/post2.jpg" alt="post">
                 <div class="media-body">
-                    <a href="blog-details.html"><h3>The Amazing Hubble</h3></a>
+                    <a href="blog-details.html">
+                        <h3>The Amazing Hubble</h3>
+                    </a>
                     <p>02 Hours ago</p>
                 </div>
             </div>
             <div class="media post_item">
                 <img src="/template/img/blog/popular-post/post3.jpg" alt="post">
                 <div class="media-body">
-                    <a href="blog-details.html"><h3>Astronomy Or Astrology</h3></a>
+                    <a href="blog-details.html">
+                        <h3>Astronomy Or Astrology</h3>
+                    </a>
                     <p>03 Hours ago</p>
                 </div>
             </div>
             <div class="media post_item">
                 <img src="/template/img/blog/popular-post/post4.jpg" alt="post">
                 <div class="media-body">
-                    <a href="blog-details.html"><h3>Asteroids telescope</h3></a>
+                    <a href="blog-details.html">
+                        <h3>Asteroids telescope</h3>
+                    </a>
                     <p>01 Hours ago</p>
                 </div>
             </div>
@@ -291,6 +314,24 @@
                         <p>44</p>
                     </a>
                 </li>
+            </ul>
+            <div class="br"></div>
+        </aside>
+        <aside class="single-sidebar-widget tag_cloud_widget">
+            <h4 class="widget_title">Tag Clouds</h4>
+            <ul class="list">
+                <li><a href="#">Technology</a></li>
+                <li><a href="#">Fashion</a></li>
+                <li><a href="#">Architecture</a></li>
+                <li><a href="#">Fashion</a></li>
+                <li><a href="#">Food</a></li>
+                <li><a href="#">Technology</a></li>
+                <li><a href="#">Lifestyle</a></li>
+                <li><a href="#">Art</a></li>
+                <li><a href="#">Adventure</a></li>
+                <li><a href="#">Food</a></li>
+                <li><a href="#">Lifestyle</a></li>
+                <li><a href="#">Adventure</a></li>
             </ul>
         </aside>
     </div>
