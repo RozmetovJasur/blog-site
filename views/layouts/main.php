@@ -5,6 +5,7 @@
 
 use yii\helpers\Html;
 use app\assets\AppAsset;
+use app\widgets\Breadcrumbs;
 
 AppAsset::register($this);
 ?>
@@ -32,28 +33,7 @@ AppAsset::register($this);
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-
-                <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-                    <ul class="nav navbar-nav menu_nav">
-                        <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="category.html">Category</a></li>
-                        <li class="nav-item"><a class="nav-link" href="archive.html">Archive</a></li>
-                        <li class="nav-item submenu dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item"><a class="nav-link" href="single-blog.html">Sinlge Blog</a></li>
-                                <li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right header_social ml-auto">
-                        <li class="nav-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li class="nav-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li class="nav-item"><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                        <li class="nav-item"><a href="#"><i class="fa fa-behance"></i></a></li>
-                    </ul>
-                </div>
+                <?= \app\widgets\MenuWidget::widget(); ?>
             </div>
         </nav>
     </div>
@@ -62,6 +42,10 @@ AppAsset::register($this);
 <section class="blog_area">
     <div class="container">
         <div class="row">
+            <?= Breadcrumbs::widget([
+                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            ]) ?>
+            <br/>
             <?= $content; ?>
         </div>
     </div>

@@ -223,8 +223,7 @@ button:focus {
 }
 
 .main_menu .navbar .nav .nav-item .nav-link {
-    font: 400 13px/44px "Inconsolata", monospace;
-    text-transform: uppercase;
+    font: 400 13px/44px 'Lato', sans-serif;
     color: #000;
     padding: 0 20px;
     display: inline-block

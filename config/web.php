@@ -1,5 +1,6 @@
 <?php
 
+require_once dirname(__DIR__)."/helpers/conf.php";
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db-local.php';
 
@@ -13,6 +14,7 @@ $config = [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
+    'as AppBehavior' => 'app\behaviors\AppBehavior',
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -49,8 +51,11 @@ $config = [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'rules' => [
-            ],
+            'class' => 'app\components\UrlManager',
+            'rules'=>[
+                '<controller:\w+>/<action:\w+>/<url>' => '<controller>/<action>',
+                'home' => 'default/index',
+            ]
         ],
         'assetManager' => [
             'bundles' => [
@@ -66,6 +71,20 @@ $config = [
                 'yii\bootstrap\BootstrapPluginAsset' => [
                     'js'=>[]
                 ],
+            ]
+        ],
+        "i18n" => [
+            'translations' => [
+                'yii' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@app/messages',
+                    'sourceLanguage' => 'en-US'
+                ],
+                '*' => [
+                    'class' => '\yii\i18n\GettextMessageSource',
+                    'basePath' => '@app/messages',
+                    'sourceLanguage' => 'uz'
+                ]
             ]
         ],
     ],
