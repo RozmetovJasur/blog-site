@@ -5,14 +5,14 @@ use yii\db\Migration;
 /**
  * Class m191116_124943_tr_topics
  */
-class m191116_124943_tr_topics extends Migration
+class m191116_124943_tr_user_topics extends Migration
 {
     /**
      * {@inheritdoc}
      */
     public function safeUp()
     {
-        $this->createTable('tr_topics', [
+        $this->createTable('tr_user_topics', [
             'id' => $this->primaryKey(),
             'user_id' => $this->integer(),
             'blog_id' => $this->integer(),
@@ -29,22 +29,24 @@ class m191116_124943_tr_topics extends Migration
             'updated_at'=>$this->timestamp()
         ]);
 
+        /**
         // creates index for column `blog_id`
         $this->createIndex(
             'idx-topic-blog_id',
-            'tr_topics',
+            'tr_user_topics',
             'blog_id'
         );
 
         // add foreign key for table `tr_blogs`
         $this->addForeignKey(
             'fk-topic-blog_id',
-            'tr_topics',
+            'tr_user_topics',
             'blog_id',
-            'tr_blogs',
+            'tr_user_blogs',
             'id',
             'CASCADE'
         );
+         * */
     }
 
     /**
@@ -52,7 +54,7 @@ class m191116_124943_tr_topics extends Migration
      */
     public function safeDown()
     {
-        echo "m191116_124943_tr_topics cannot be reverted.\n";
+        echo "m191116_124943_tr_user_topics cannot be reverted.\n";
 
         return false;
     }

@@ -28,20 +28,20 @@ $this->params['breadcrumbs'][] = $this->title;
         Shuningdek, bu erda CMS, Yii2, Laravel, Symfony,Django, Spring va boshqa yordamchi dasturiy ta'minotlar va
         dasturlash tillari haqida qiziqarli maqolalar va yangiliklarni topishingiz mumkin.
         Va agar siz operatsion tizimlarga (masalan, Windows, Ubuntu, MAC) qiziqsangiz,
-        unda juda ko'p qiziqarli narsalar bo'ladi: OT-ni o'rnatish, ma'lumotlarni tiklash, lokal tarmoqni sozlash, dasturlarni o'rnatish va boshqalar.
+        unda juda ko'p qiziqarli narsalar bo'ladi: OT ni o'rnatish, ma'lumotlarni tiklash, lokal tarmoqni sozlash, dasturlarni o'rnatish va boshqalar.
     </p>
 
     <p>
-        Internet-marketingga qiziqasizmi? Keyin, ayniqsa siz uchun biz SEO va kontekstual web-saytni reklama qilish
-        bo'yicha maqolalarimiz bor. Siz reklama uchun to'g'ri so'z birikmalarini qanday tanlashni, reklama oldin
+        Internet-marketingga qiziqasizmi? Unda siz uchun bizning SEO va web-saytni reklama qilish
+        bo'yicha maqolalarimiz bor. Siz reklama uchun to'g'ri so'z birikmalarini qanday tanlashni, reklamadan oldin
         saytni qanday qilib to'g'ri tekshirishni, kontekstli reklama uchun byudjetni qanday rejalashtirishni,
         Google AdWords va Yandex.Direct-da reklama kampaniyalarini qanday tashkil etish va yuritishni o'rganishingiz mumkin.
     </p>
 
     <p>Va agar siz o'zingizning savolingizga javob topa olmasangiz, bizning savol-javob bo'limimizga o'ting,
-        u yerda siz o'zingizning savolingizni berishingiz va yaqin kelajakda sizning soha mutaxassislaridan javob olishingiz mumkin.</p>
+        u yerda siz o'zingizning savolingizni berishingiz va soha mutaxassislaridan javob olishingiz mumkin.</p>
 
-    <p>Bizning loyihamiz hali yosh bo'lsa-da, maqolalar unchalik ko'p emas. Ammo shu maqolalar barchaga yordam berishiga umid qilamiz!</p>
+    <p>Bizning loyihamiz hali yosh bo'lsada, maqolalar unchalik ko'p emas. Ammo shu maqolalar barchaga yordam berishiga umid qilamiz!</p>
 
     <hr>
 

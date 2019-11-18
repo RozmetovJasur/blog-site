@@ -3,7 +3,7 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-use yii\helpers\Html;
+use app\helpers\Html;
 use app\assets\AppAsset;
 use app\widgets\Breadcrumbs;
 
@@ -41,11 +41,12 @@ AppAsset::register($this);
 
 <section class="blog_area">
     <div class="container">
-        <div class="row">
+        <div class="row m-2">
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
             <br/>
+            <?= Html::getFlashMessages(); ?>
             <?= $content; ?>
         </div>
     </div>

@@ -3,20 +3,20 @@
 use yii\db\Migration;
 
 /**
- * Class m191116_141002_tr_tags
+ * Class m191118_155257_tr_suggestions
  */
-class m191116_141002_tr_tags extends Migration
+class m191118_155257_tr_user_suggestions extends Migration
 {
     /**
      * {@inheritdoc}
      */
     public function safeUp()
     {
-        $this->createTable('tr_tags', [
+        $this->createTable('tr_user_suggestions', [
             'id' => $this->primaryKey(),
             'user_id' => $this->integer(),
-            'name' => $this->string(20),
-            'slug' => $this->string(20),
+            'title' => $this->string(100),
+            'content' => $this->text(),
             'created_at'=>$this->timestamp()->defaultExpression('CURRENT_TIMESTAMP'),
             'updated_at'=>$this->timestamp()
         ]);
@@ -27,7 +27,7 @@ class m191116_141002_tr_tags extends Migration
      */
     public function safeDown()
     {
-        echo "m191116_141002_tr_tags cannot be reverted.\n";
+        echo "m191118_155257_tr_user_suggestions cannot be reverted.\n";
 
         return false;
     }
@@ -41,7 +41,7 @@ class m191116_141002_tr_tags extends Migration
 
     public function down()
     {
-        echo "m191116_141002_tr_tags cannot be reverted.\n";
+        echo "m191118_155257_tr_suggestions cannot be reverted.\n";
 
         return false;
     }

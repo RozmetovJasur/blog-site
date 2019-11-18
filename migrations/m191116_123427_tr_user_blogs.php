@@ -5,14 +5,14 @@ use yii\db\Migration;
 /**
  * Class m191116_123427_true_blogs
  */
-class m191116_123427_tr_blogs extends Migration
+class m191116_123427_tr_user_blogs extends Migration
 {
     /**
      * {@inheritdoc}
      */
     public function safeUp()
     {
-        $this->createTable('tr_blogs', [
+        $this->createTable('tr_user_blogs', [
             'id' => $this->primaryKey(),
             'user_id' => $this->integer(),
             'name' => $this->string(100),
@@ -27,7 +27,7 @@ class m191116_123427_tr_blogs extends Migration
      */
     public function safeDown()
     {
-        echo "m191116_123427_tr_blogs cannot be reverted.\n";
+        echo "m191116_123427_tr_user_blogs cannot be reverted.\n";
 
         return false;
     }

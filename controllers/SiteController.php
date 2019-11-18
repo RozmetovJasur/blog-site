@@ -3,6 +3,9 @@
 namespace app\controllers;
 
 use app\components\Controller;
+use app\helpers\Html;
+use app\models\UsersModel;
+use app\models\UserSuggestionsModel;
 use Yii;
 
 /**
@@ -29,7 +32,7 @@ class SiteController extends Controller
             ],
             'captcha' => [
                 'class' => 'yii\captcha\CaptchaAction',
-                'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
+//                'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
             ],
         ];
     }
@@ -61,9 +64,46 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
+    /**
+     * @return string
+     * @throws \yii\base\ExitException
+     * @throws \yii\web\NotFoundHttpException
+     */
     public function actionContact()
     {
-        return $this->renderContent('contact');
+        $model = new UserSuggestionsModel();
+        $model->setScenario($model::SCENARIO_ADD);
+        $model->ajaxValidation();
+        if($model->postValidation())
+        {
+            $transaction = Yii::$app->db->beginTransaction();
+            try {
+                $user = UsersModel::find()
+                    ->andFilterWhere(['email' => $model->email])
+                    ->one();
+                if (!$user) {
+                    $user = new UsersModel();
+                    $user->fname = $model->fname;
+                    $user->email = $model->email;
+                    $user->password = Yii::$app->security->generatePasswordHash('123123');
+                    $user->save(false);
+                }
+                $model->user_id = $user->id;
+                $model->save();
+                $transaction->commit();
+                Html::alertSuccess(t("Sizning savolingiz muvaffaqiyatli qabul qilindi."));
+
+            }catch (\Exception $e)
+            {
+                print_variable($e->getMessage());
+                Html::alertTransactionException($e);
+                $transaction->rollBack();
+            }
+            return  $this->redirect(['contact']);
+        }
+        return $this->render('contact',[
+            'model' => $model,
+        ]);
     }
 
     private function registerMetaTagHomePage()
