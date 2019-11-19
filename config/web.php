@@ -10,6 +10,7 @@ $config = [
     'name' => "true.uz",
     'version' => "1.0",
     'bootstrap' => ['log'],
+    'defaultRoute' => 'blogs',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',

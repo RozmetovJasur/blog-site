@@ -3,21 +3,19 @@
 use yii\db\Migration;
 
 /**
- * Class m191116_123427_true_blogs
+ * Class m191119_141104_tr_user_article_comments
  */
-class m191116_123427_tr_user_blogs extends Migration
+class m191119_141104_tr_user_article_comments extends Migration
 {
     /**
      * {@inheritdoc}
      */
     public function safeUp()
     {
-        $this->createTable('tr_user_blogs', [
+        $this->createTable('tr_user_article_comments', [
             'id' => $this->primaryKey(),
             'user_id' => $this->integer(),
-            'name' => $this->string(100),
-            'slug' => $this->string(100),
-            'count_article' => $this->integer()->defaultValue(0),
+            'comment' => $this->text(),
             'created_at'=>$this->timestamp()->defaultExpression('CURRENT_TIMESTAMP'),
             'updated_at'=>$this->timestamp()
         ]);
@@ -28,7 +26,7 @@ class m191116_123427_tr_user_blogs extends Migration
      */
     public function safeDown()
     {
-        echo "m191116_123427_tr_user_blogs cannot be reverted.\n";
+        echo "m191119_141104_tr_user_article_comments cannot be reverted.\n";
 
         return false;
     }
@@ -42,7 +40,7 @@ class m191116_123427_tr_user_blogs extends Migration
 
     public function down()
     {
-        echo "m191116_123427_tr_blogs cannot be reverted.\n";
+        echo "m191119_141104_tr_user_article_comments cannot be reverted.\n";
 
         return false;
     }

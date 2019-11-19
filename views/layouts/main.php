@@ -22,23 +22,7 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
-<header class="header_area">
-    <div class="main_menu">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container box_1620">
-
-                <a class="navbar-brand logo_h" href="/"><img src="img/logo.png" alt=""></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <?= \app\widgets\MenuWidget::widget(); ?>
-            </div>
-        </nav>
-    </div>
-</header>
-
+<?= \app\widgets\HeaderWidget::widget(); ?>
 <section class="blog_area">
     <div class="container">
         <div class="row m-2">
@@ -47,71 +31,43 @@ AppAsset::register($this);
             ]) ?>
             <br/>
             <?= Html::getFlashMessages(); ?>
-            <?= $content; ?>
+            <div class="col-lg-8">
+                <?= $content; ?>
+            </div>
+            <div class="col-lg-4">
+                <div class="blog_right_sidebar">
+                    <aside class="single_sidebar_widget search_widget">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search Posts">
+                            <span class="input-group-btn">
+                <button class="btn btn-default" type="button"><i class="lnr lnr-magnifier"></i></button>
+                </span>
+                        </div>
+                        <div class="br"></div>
+                    </aside>
+                    <aside class="single_sidebar_widget author_widget">
+                        <img class="author_img img-fluid" src="/template/img/blog/author.png" alt="">
+                        <h4>Charlie Barber</h4>
+                        <p>Senior blog writer</p>
+                        <p>Boot camps have its supporters andit sdetractors. Some people do not understand why you should have to spend money on boot camp when you can get. Boot camps have itssuppor ters andits detractors.</p>
+                        <div class="social_icon">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-github"></i></a>
+                            <a href="#"><i class="fa fa-behance"></i></a>
+                        </div>
+                        <div class="br"></div>
+                    </aside>
+                    <?= \app\widgets\TopBlogsWidget::widget(); ?>
+                    <?= \app\widgets\TopTagsWidget::widget(); ?>
+                    <?= \app\widgets\TopArticlesWidget::widget(); ?>
+                </div>
+                <div class="br"></div>
+            </div>
         </div>
     </div>
 </section>
-
-<footer class="footer-area p_120">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3  col-md-6 col-sm-6">
-                <div class="single-footer-widget">
-                    <h6 class="footer_title">About Us</h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="single-footer-widget">
-                    <h6 class="footer_title">Newsletter</h6>
-                    <p>Stay updated with our latest trends</p>
-                    <div id="mc_embed_signup">
-                        <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative" novalidate="true">
-                            <div class="input-group d-flex flex-row">
-                                <input name="EMAIL" placeholder="Email Address" onfocus="if (!window.__cfRLUnblockHandlers) return false; this.placeholder = ''" onblur="if (!window.__cfRLUnblockHandlers) return false; this.placeholder = 'Email Address '" required="" type="email">
-                                <button class="btn sub-btn"><span class="lnr lnr-arrow-right"></span></button>
-                            </div>
-                            <div class="mt-10 info"></div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-footer-widget instafeed">
-                    <h6 class="footer_title">Instagram Feed</h6>
-                    <ul class="list instafeed d-flex flex-wrap">
-                        <li><img src="/template/img/instagram/Image-01.jpg" alt=""></li>
-                        <li><img src="/template/img/instagram/Image-02.jpg" alt=""></li>
-                        <li><img src="/template/img/instagram/Image-03.jpg" alt=""></li>
-                        <li><img src="/template/img/instagram/Image-04.jpg" alt=""></li>
-                        <li><img src="/template/img/instagram/Image-05.jpg" alt=""></li>
-                        <li><img src="/template/img/instagram/Image-06.jpg" alt=""></li>
-                        <li><img src="/template/img/instagram/Image-07.jpg" alt=""></li>
-                        <li><img src="/template/img/instagram/Image-08.jpg" alt=""></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6 col-sm-6">
-                <div class="single-footer-widget f_social_wd">
-                    <h6 class="footer_title">Follow Us</h6>
-                    <p>Let us be social</p>
-                    <div class="f_social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-dribbble"></i></a>
-                        <a href="#"><i class="fa fa-behance"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row footer-bottom d-flex justify-content-between align-items-center">
-            <p class="col-lg-12 footer-text text-center">
-                Copyright &copy; <?= date("Y"); ?> All rights reserved | This website is made
-                by <a href="http://rozmetovjasur.uz" target="_blank">rozmetovjasur</a>
-            </p>
-        </div>
-    </div>
-</footer>
+<?= \app\widgets\FooterWidget::widget(); ?>
 <?php $this->endBody() ?>
 </body>
 </html>

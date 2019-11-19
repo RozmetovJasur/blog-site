@@ -43,19 +43,19 @@ class MenuWidget extends Widget
                     "url" => ["site/index"],
                 ],
                 [
-                    "title" => t("Blogs"),
+                    "title" => t("Bloglar"),
                     "icon" => "<i class='fa fa-newspaper'></i>",
-                    "url" => ["site/blogs"],
+                    "url" => ["blogs/index"],
                 ],
                 [
                     "title" => t("Maqolalar"),
                     "icon" => "<i class='fa fa-comment'></i>",
-                    "url" => ["site/topics"],
+                    "url" => ["articles/index"],
                 ],
                 [
                     "title" => t("Yangiliklar"),
                     "icon" => "<i class='fa fa-comment'></i>",
-                    "url" => ["site/news"],
+                    "url" => ["news/index"],
                 ],
                 [
                     "title" => t("Sayt haqida"),
