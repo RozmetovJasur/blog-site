@@ -25,7 +25,7 @@ AppAsset::register($this);
 <?= \app\widgets\HeaderWidget::widget(); ?>
 <section class="blog_area">
     <div class="container">
-        <div class="row m-2">
+        <div class="row m-0">
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>

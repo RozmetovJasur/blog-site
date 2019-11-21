@@ -9,9 +9,8 @@
 use yii\helpers\Html;
 /** @var $menus [] */
 /** @var $current_route string */
-
+$user = Yii::$app->user;
 ?>
-
 <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
     <ul class="nav navbar-nav menu_nav">
         <?php foreach ($menus as $row):
@@ -22,11 +21,32 @@ use yii\helpers\Html;
             </li>
         <?php endforeach; ?>
     </ul>
-    <ul class="nav navbar-nav navbar-right header_social ml-auto">
+    <ul class="nav navbar-nav navbar-right   ml-auto">
+        <?php if($user->isGuest): ?>
+            <li class="nav-item"><?= Html::a(t("Kirish").' '.'<i class="fa fa-sign-in"></i>', ['site/login'],['class' => 'nav-link']); ?></li>
+            <li class="nav-item"><?= Html::a(t("Ro'yxatdan o'tish").' '.'<i class="fa fa-plus"></i>', ['site/registration'],['class' => 'nav-link']); ?></li>
+        <?php else: ?>
+            <li class="nav-item submenu dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <?= t("Yangi");?> <i class="fa fa-caret-down" aria-hidden="true"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="nav-item"><?= Html::a(t("Maqola"), ['site/index'], ['class' => 'nav-link']) ?></li>
+                    <li class="nav-item"><?= Html::a(t("Yangilik"), ['site/index'],['class' => 'nav-link']); ?></li>
+                </ul>
+            </li>
+            <li class="nav-item submenu dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <?= $user->identity->fname;?> <i class="fa fa-caret-down" aria-hidden="true"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="nav-item"><?= Html::a(t("Profil"), ['site/index'], ['class' => 'nav-link']) ?></li>
+                    <li class="nav-item"><?= Html::a(t("Chiqish").' '.'<i class="fa fa-sign-out"></i>', ['site/logout'],['class' => 'nav-link']); ?></li>
+                </ul>
+            </li>
+        <?php endif; ?>
         <?= \app\widgets\LangWidget::widget(); ?>
-        <li class="nav-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-        <li class="nav-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-        <li class="nav-item"><a href="#"><i class="fa fa-dribbble"></i></a></li>
-        <li class="nav-item"><a href="#"><i class="fa fa-behance"></i></a></li>
+        <li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-facebook"></i></a></li>
+        <li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-twitter"></i></a></li>
     </ul>
 </div>

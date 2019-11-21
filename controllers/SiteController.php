@@ -51,6 +51,63 @@ class SiteController extends Controller
     }
 
     /**
+     * @return string|\yii\web\Response
+     * @throws \yii\base\ExitException
+     * @throws \yii\web\NotFoundHttpException
+     */
+    public function actionLogin()
+    {
+        $model = new UsersModel(["scenario" => UsersModel::SCENARIO_LOGIN]);
+        $model->ajaxValidation();
+        if ($model->postValidation() && $model->login()) {
+
+            Html::alertSuccess(t("Tizimga xush kelibsiz!"));
+            return $this->redirect(["site/index"]);
+        }
+
+        return $this->render("login", [
+            "model" => $model
+        ]);
+    }
+
+    /**
+     * @return string|\yii\web\Response
+     * @throws \yii\base\ExitException
+     * @throws \yii\web\NotFoundHttpException
+     */
+    public function actionRegistration()
+    {
+        $model = new UsersModel(["scenario" => UsersModel::SCENARIO_REGISTRATION]);
+        $model->ajaxValidation();
+        if ($model->postValidation()) {
+            $transaction = Yii::$app->db->beginTransaction();
+            try{
+                $model->password = Yii::$app->security->generatePasswordHash($model->password);
+                $model->save(false);
+                $transaction->commit();
+                Yii::$app->user->login($model);
+                Html::alertSuccess(t("Tizimga xush kelibsiz!"));
+            }
+            catch (\Exception $e){
+                print_variable($e->getMessage());
+                Html::alertTransactionException($e);
+                $transaction->rollBack();
+            }
+            return $this->redirect(["site/index"]);
+        }
+
+        return $this->render("registration", [
+            "model" => $model
+        ]);
+    }
+
+    public function actionLogout()
+    {
+        Yii::$app->user->logout();
+        return $this->redirect(["login"]);
+    }
+
+    /**
      * @return string
      * @throws \yii\base\ExitException
      * @throws \yii\web\NotFoundHttpException

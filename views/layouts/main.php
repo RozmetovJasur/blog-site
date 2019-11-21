@@ -25,13 +25,12 @@ AppAsset::register($this);
 <?= \app\widgets\HeaderWidget::widget(); ?>
 <section class="blog_area">
     <div class="container">
-        <div class="row m-2">
+        <div class="row">
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
-            <br/>
-            <?= Html::getFlashMessages(); ?>
             <div class="col-lg-8">
+                <?= Html::getFlashMessages(); ?>
                 <?= $content; ?>
             </div>
             <div class="col-lg-4">
@@ -45,11 +44,15 @@ AppAsset::register($this);
                         </div>
                         <div class="br"></div>
                     </aside>
+                    <?= \app\widgets\TopBlogsWidget::widget(); ?>
+                    <?= \app\widgets\TopTagsWidget::widget(); ?>
+                    <?= \app\widgets\TopArticlesWidget::widget(); ?>
+
                     <aside class="single_sidebar_widget author_widget">
-                        <img class="author_img img-fluid" src="/template/img/blog/author.png" alt="">
-                        <h4>Charlie Barber</h4>
-                        <p>Senior blog writer</p>
-                        <p>Boot camps have its supporters andit sdetractors. Some people do not understand why you should have to spend money on boot camp when you can get. Boot camps have itssuppor ters andits detractors.</p>
+                        <img class="author_img img-fluid" src="/uploads/img/no-photo.jpg" alt="">
+                        <h4><?= t("Rozmetov Jasur"); ?></h4>
+                        <p><?= t("Senior web developer"); ?></p>
+                        <p><?= t("Shaxsiy blog"); ?></p>
                         <div class="social_icon">
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>
@@ -58,9 +61,6 @@ AppAsset::register($this);
                         </div>
                         <div class="br"></div>
                     </aside>
-                    <?= \app\widgets\TopBlogsWidget::widget(); ?>
-                    <?= \app\widgets\TopTagsWidget::widget(); ?>
-                    <?= \app\widgets\TopArticlesWidget::widget(); ?>
                 </div>
                 <div class="br"></div>
             </div>

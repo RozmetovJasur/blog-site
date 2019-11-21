@@ -6,53 +6,20 @@
  * Date: 19.11.2019
  * Time: 20:01
  */
+use app\helpers\Html;
+/** @var $list \app\models\UserBlogsModel [] */
 ?>
 
 <aside class="single_sidebar_widget post_category_widget">
-    <h4 class="widget_title">Post Catgories</h4>
+    <h4 class="widget_title"><?= t("Bloglar"); ?></h4>
     <ul class="list cat-list">
+        <?php foreach ($list as $row): ?>
         <li>
-            <a href="#" class="d-flex justify-content-between">
-                <p>Technology</p>
-                <p>37</p>
-            </a>
+            <?= Html::a('<p>'.$row->name.'</p>'.'<p>'.$row->count_article.'</p>',
+                ['articles/index', 'url' => $row->slug],
+                ['class' => 'd-flex justify-content-between']); ?>
         </li>
-        <li>
-            <a href="#" class="d-flex justify-content-between">
-                <p>Lifestyle</p>
-                <p>24</p>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="d-flex justify-content-between">
-                <p>Fashion</p>
-                <p>59</p>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="d-flex justify-content-between">
-                <p>Art</p>
-                <p>29</p>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="d-flex justify-content-between">
-                <p>Food</p>
-                <p>15</p>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="d-flex justify-content-between">
-                <p>Architecture</p>
-                <p>09</p>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="d-flex justify-content-between">
-                <p>Adventure</p>
-                <p>44</p>
-            </a>
-        </li>
+        <?php endforeach; ?>
     </ul>
     <div class="br"></div>
 </aside>

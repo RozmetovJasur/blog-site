@@ -10,7 +10,6 @@ $config = [
     'name' => "true.uz",
     'version' => "1.0",
     'bootstrap' => ['log'],
-    'defaultRoute' => 'blogs',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
@@ -26,8 +25,12 @@ $config = [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
-            'identityClass' => 'app\models\User',
+            'class' => 'app\components\User',
+            'identityCookie' => ['name' => '_user', 'httpOnly' => true],
+            'idParam' => '__user_id',
+            'identityClass' => 'app\models\UsersModel',
             'enableAutoLogin' => true,
+            'loginUrl' => ['site/login'],
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
@@ -54,8 +57,13 @@ $config = [
             'showScriptName' => false,
             'class' => 'app\components\UrlManager',
             'rules'=>[
+                'about' => 'site/about',
+                'contact' => 'site/contact',
+                'login' => 'site/login',
+                'registration' => 'site/registration',
                 '<controller:\w+>/<action:\w+>/<url>' => '<controller>/<action>',
-                'home' => 'default/index',
+                'articles/<url>/' => 'articles/index',
+                '<controller>'=>'<controller>/index',
             ]
         ],
         'assetManager' => [

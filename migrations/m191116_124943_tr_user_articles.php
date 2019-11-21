@@ -12,7 +12,7 @@ class m191116_124943_tr_user_articles extends Migration
      */
     public function safeUp()
     {
-        $this->createTable('tr_user_topics', [
+        $this->createTable('tr_user_articles', [
             'id' => $this->primaryKey(),
             'user_id' => $this->integer(),
             'blog_id' => $this->integer(),

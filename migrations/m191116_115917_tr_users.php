@@ -18,6 +18,7 @@ class m191116_115917_tr_users extends Migration
             'lname' => $this->string(20),
             'email' => $this->string(20)->notNull()->unique(),
             'password' => $this->string()->notNull(),
+            'active' => $this->smallInteger(1)->defaultValue(0),
             'created_at'=>$this->timestamp()->defaultExpression('CURRENT_TIMESTAMP'),
             'updated_at'=>$this->timestamp()
         ]);

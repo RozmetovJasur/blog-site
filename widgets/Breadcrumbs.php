@@ -18,7 +18,7 @@ class Breadcrumbs extends \yii\widgets\Breadcrumbs
     /**
      * @inheritdoc
      */
-    public $options = ['class' => 'col-lg-12 breadcrumb'];
+    public $options = ['class' => 'col-lg-12 breadcrumb bg-light'];
 
     /**
      * @inheritdoc

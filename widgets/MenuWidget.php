@@ -43,11 +43,6 @@ class MenuWidget extends Widget
                     "url" => ["site/index"],
                 ],
                 [
-                    "title" => t("Bloglar"),
-                    "icon" => "<i class='fa fa-newspaper'></i>",
-                    "url" => ["blogs/index"],
-                ],
-                [
                     "title" => t("Maqolalar"),
                     "icon" => "<i class='fa fa-comment'></i>",
                     "url" => ["articles/index"],
@@ -56,6 +51,11 @@ class MenuWidget extends Widget
                     "title" => t("Yangiliklar"),
                     "icon" => "<i class='fa fa-comment'></i>",
                     "url" => ["news/index"],
+                ],
+                [
+                    "title" => t("Bloglar"),
+                    "icon" => "<i class='fa fa-newspaper'></i>",
+                    "url" => ["blogs/index"],
                 ],
                 [
                     "title" => t("Sayt haqida"),

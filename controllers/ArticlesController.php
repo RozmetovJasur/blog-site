@@ -10,7 +10,10 @@
 namespace app\controllers;
 
 
+use app\components\ActiveDataProvider;
 use app\components\Controller;
+use app\models\UserArticlesModel;
+use app\models\UserBlogsModel;
 
 /**
  * Class ArticlesController
@@ -18,8 +21,26 @@ use app\components\Controller;
  */
 class ArticlesController extends Controller
 {
-    public function actionIndex()
+    public function actionIndex($url = null)
     {
-        return $this->render('index');
+        $blog = UserBlogsModel::find()
+            ->andFilterWhere(['slug' => $url])
+            ->one();
+
+        $query = UserArticlesModel::find();
+
+        if($blog)
+            $query->where(['blog_id' => $blog->id]);
+
+        $data = new ActiveDataProvider([
+            'query' => $query->orderBy(['id' => SORT_ASC]),
+            'pagination' => [
+                'pageSize' => 20,
+            ]
+        ]);
+
+        return $this->render('index',[
+            "data" => $data,
+        ]);
     }
 }

@@ -10,6 +10,7 @@
 namespace app\widgets;
 
 
+use app\models\UserBlogsModel;
 use yii\base\Widget;
 
 /**
@@ -25,6 +26,9 @@ class TopBlogsWidget extends Widget
 
     public function run()
     {
-        return $this->render('top-blogs');
+        $list = UserBlogsModel::find()->all();
+        return $this->render('top-blogs',[
+            'list' => $list,
+        ]);
     }
 }

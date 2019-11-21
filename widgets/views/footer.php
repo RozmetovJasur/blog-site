@@ -7,8 +7,8 @@
  * Time: 19:50
  */
 ?>
-
-<footer class="footer-area p_120">
+<br>
+<footer class="footer-area p_50">
     <div class="container">
         <div class="row">
             <div class="col-lg-3  col-md-6 col-sm-6">
