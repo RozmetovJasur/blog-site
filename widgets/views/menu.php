@@ -31,8 +31,8 @@ $user = Yii::$app->user;
                     <?= t("Yangi");?> <i class="fa fa-caret-down" aria-hidden="true"></i>
                 </a>
                 <ul class="dropdown-menu">
-                    <li class="nav-item"><?= Html::a(t("Maqola"), ['site/index'], ['class' => 'nav-link']) ?></li>
-                    <li class="nav-item"><?= Html::a(t("Yangilik"), ['site/index'],['class' => 'nav-link']); ?></li>
+                    <li class="nav-item"><?= Html::a(t("Maqola"), ['cabinet/add-article'], ['class' => 'nav-link']) ?></li>
+                    <li class="nav-item"><?= Html::a(t("Yangilik"), ['cabinet/add-news'],['class' => 'nav-link']); ?></li>
                 </ul>
             </li>
             <li class="nav-item submenu dropdown">

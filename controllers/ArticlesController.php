@@ -14,6 +14,8 @@ use app\components\ActiveDataProvider;
 use app\components\Controller;
 use app\models\UserArticlesModel;
 use app\models\UserBlogsModel;
+use app\models\UserTagsModel;
+use yii\helpers\ArrayHelper;
 
 /**
  * Class ArticlesController
@@ -24,7 +26,7 @@ class ArticlesController extends Controller
     public function actionIndex($url = null)
     {
         $blog = UserBlogsModel::find()
-            ->andFilterWhere(['slug' => $url])
+            ->where(['slug' => $url])
             ->one();
 
         $query = UserArticlesModel::find();
@@ -39,8 +41,17 @@ class ArticlesController extends Controller
             ]
         ]);
 
+        $blogs = ArrayHelper::map(UserBlogsModel::find()->all(),'id',function ($row){
+            return ['name' => $row->name, 'slug' => $row->slug];
+        });
+        $tags = ArrayHelper::map(UserTagsModel::find()->all(),'id',function ($row){
+            return ['name' => $row->name, 'slug' => $row->slug];
+        });
+
         return $this->render('index',[
             "data" => $data,
+            "blogs" => $blogs,
+            "tags" => $tags,
         ]);
     }
 }

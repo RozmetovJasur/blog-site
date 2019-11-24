@@ -15,6 +15,7 @@ namespace app\components;
  */
 class AuthController extends \yii\web\Controller
 {
+    public $layout = 'empty';
     public function behaviors()
     {
         return [

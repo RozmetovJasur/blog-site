@@ -15,6 +15,7 @@ class m191119_141104_tr_user_article_comments extends Migration
         $this->createTable('tr_user_article_comments', [
             'id' => $this->primaryKey(),
             'user_id' => $this->integer(),
+            'article_id' => $this->integer(),
             'comment' => $this->text(),
             'created_at'=>$this->timestamp()->defaultExpression('CURRENT_TIMESTAMP'),
             'updated_at'=>$this->timestamp()

@@ -15,7 +15,8 @@ class m191116_124943_tr_user_articles extends Migration
         $this->createTable('tr_user_articles', [
             'id' => $this->primaryKey(),
             'user_id' => $this->integer(),
-            'blog_id' => $this->integer(),
+            'blog_id' => $this->text(),
+            'tag_id' => $this->text(),
             'title' => $this->string(100),
             'content' => $this->text(),
             'image' => $this->string(200),

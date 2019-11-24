@@ -16,6 +16,7 @@ use app\components\ActiveRecord;
 * Class UserArticleCommentsModel
 * @package app\models
 * @property $user_id
+* @property $article_id
 * @property $comment
 * @property $created_at
 * @property $updated_at

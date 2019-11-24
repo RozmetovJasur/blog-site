@@ -6,23 +6,18 @@
  * Date: 19.11.2019
  * Time: 20:03
  */
+use app\helpers\Html;
+/** @var $list \app\models\UserTagsModel [] */
 ?>
 
 <aside class="single-sidebar-widget tag_cloud_widget">
-    <h4 class="widget_title">Tag Clouds</h4>
+    <h4 class="widget_title"><?= t("Teglar"); ?></h4>
     <ul class="list">
-        <li><a href="#">Technology</a></li>
-        <li><a href="#">Fashion</a></li>
-        <li><a href="#">Architecture</a></li>
-        <li><a href="#">Fashion</a></li>
-        <li><a href="#">Food</a></li>
-        <li><a href="#">Technology</a></li>
-        <li><a href="#">Lifestyle</a></li>
-        <li><a href="#">Art</a></li>
-        <li><a href="#">Adventure</a></li>
-        <li><a href="#">Food</a></li>
-        <li><a href="#">Lifestyle</a></li>
-        <li><a href="#">Adventure</a></li>
+        <?php foreach ($list as $row): ?>
+            <li>
+                <?= Html::a($row->name,['tags/index', 'url' => $row->slug]); ?>
+            </li>
+        <?php endforeach; ?>
     </ul>
     <div class="br"></div>
 </aside>

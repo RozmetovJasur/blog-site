@@ -2,11 +2,16 @@
 
 namespace app\controllers;
 
+use app\components\ActiveDataProvider;
 use app\components\Controller;
 use app\helpers\Html;
+use app\models\UserArticlesModel;
+use app\models\UserBlogsModel;
 use app\models\UsersModel;
 use app\models\UserSuggestionsModel;
+use app\models\UserTagsModel;
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * Class SiteController
@@ -42,7 +47,27 @@ class SiteController extends Controller
         $this->layout='main';
         $this->view->title = t("Bosh sahifa");
         $this->registerMetaTagHomePage();
-        return $this->render('index');
+
+        $query = UserArticlesModel::find();
+        $data = new ActiveDataProvider([
+            'query' => $query->orderBy(['id' => SORT_ASC]),
+            'pagination' => [
+                'pageSize' => 20,
+            ]
+        ]);
+
+        $blogs = ArrayHelper::map(UserBlogsModel::find()->all(),'id',function ($row){
+            return ['name' => $row->name, 'slug' => $row->slug];
+        });
+        $tags = ArrayHelper::map(UserTagsModel::find()->all(),'id',function ($row){
+            return ['name' => $row->name, 'slug' => $row->slug];
+        });
+
+        return $this->render('index',[
+            "data" => $data,
+            "blogs" => $blogs,
+            "tags" => $tags,
+        ]);
     }
 
     public function actionAbout()

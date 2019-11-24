@@ -21,6 +21,7 @@ use yii\web\IdentityInterface;
 * @property $lname
 * @property $email
 * @property $password
+* @property $active
 * @property $created_at
 * @property $updated_at
 * @property $authKey

@@ -16,7 +16,7 @@ use app\helpers\Html;
         <?php foreach ($list as $row): ?>
         <li>
             <?= Html::a('<p>'.$row->name.'</p>'.'<p>'.$row->count_article.'</p>',
-                ['articles/index', 'url' => $row->slug],
+                ['blogs/index', 'url' => $row->slug],
                 ['class' => 'd-flex justify-content-between']); ?>
         </li>
         <?php endforeach; ?>

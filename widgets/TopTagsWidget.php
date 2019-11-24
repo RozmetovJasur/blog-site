@@ -10,6 +10,7 @@
 namespace app\widgets;
 
 
+use app\models\UserTagsModel;
 use yii\base\Widget;
 
 /**
@@ -24,6 +25,11 @@ class TopTagsWidget extends Widget
     }
     public function run()
     {
-        return $this->render('top-tags');
+        $list = UserTagsModel::find()
+            ->orderBy(['id' => SORT_ASC])
+            ->all();
+        return $this->render('top-tags',[
+            'list' => $list,
+        ]);
     }
 }

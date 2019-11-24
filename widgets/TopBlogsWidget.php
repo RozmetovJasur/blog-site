@@ -26,7 +26,9 @@ class TopBlogsWidget extends Widget
 
     public function run()
     {
-        $list = UserBlogsModel::find()->all();
+        $list = UserBlogsModel::find()
+            ->orderBy(['id' => SORT_ASC])
+            ->all();
         return $this->render('top-blogs',[
             'list' => $list,
         ]);
