@@ -11,6 +11,8 @@ namespace app\controllers;
 
 
 use app\components\Controller;
+use app\models\UserBlogsModel;
+use yii\web\NotFoundHttpException;
 
 /**
  * Class BlogsController
@@ -18,7 +20,7 @@ use app\components\Controller;
  */
 class BlogsController extends Controller
 {
-    public function actionIndex()
+    public function actionIndex($url)
     {
         return $this->render('index');
     }

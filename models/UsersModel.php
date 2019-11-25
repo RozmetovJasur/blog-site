@@ -129,4 +129,9 @@ class UsersModel extends ActiveRecord implements IdentityInterface
 
         return $return;
     }
+
+    public function getFi()
+    {
+        return $this->fname.' '.$this->lname;
+    }
 }

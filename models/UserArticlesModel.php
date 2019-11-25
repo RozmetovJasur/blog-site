@@ -116,4 +116,9 @@ class UserArticlesModel extends ActiveRecord
         $content = explode('&lt;cut&gt;', $this->content);
         return $content[0]?? "";
     }
+
+    public function getUser()
+    {
+        return $this->hasOne(UsersModel::class,['id' => 'user_id']);
+    }
 }

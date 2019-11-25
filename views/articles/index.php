@@ -14,6 +14,8 @@ use yii\helpers\Url;
 /** @var $this \yii\web\View */
 /** @var $data \app\components\ActiveDataProvider */
 /** @var $row \app\models\UserArticlesModel */
+
+$user = Yii::$app->user;
 $this->title = t("Maqolalar");
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -21,7 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php foreach ($data->models as $row): ?>
         <div class="blog_left_sidebar">
             <article class="blog_style1">
-                <?php if($row->user_id == Yii::$app->user->id): ?>
+                <?php if(!$user->isGuest && $row->user_id == $user->id): ?>
                     <p><?= Html::a(t('Tahrirlash'),['cabinet/update-article', 'id' => $row->id]); ?> </p>
                 <?php endif; ?>
                 <div class="blog_img">
@@ -37,7 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <?php endforeach; ?>
                             <?php endif; ?>
                         </div>
-                        <?= Html::a('<h4>'.$row->title.'</h4>',['articles/index', 'url' => $row->slug]); ?>
+                        <?= Html::a('<h4>'.$row->title.'</h4>',['articles/view', 'url' => $row->slug]); ?>
                         <p><?= $row->contentCut; ?></p>
 
                         <div class="cat">

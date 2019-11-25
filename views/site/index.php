@@ -14,12 +14,13 @@ use yii\helpers\Url;
 /** @var $this \yii\web\View */
 /** @var $data \app\components\ActiveDataProvider */
 /** @var $row \app\models\UserArticlesModel */
+$user = Yii::$app->user;
 ?>
 <?php if($data->models): ?>
     <?php foreach ($data->models as $row): ?>
         <div class="blog_left_sidebar">
             <article class="blog_style1">
-                <?php if($row->user_id == Yii::$app->user->id): ?>
+                <?php if(!$user->isGuest && $row->user_id == $user->id): ?>
                     <p><?= Html::a(t('Tahrirlash'),['cabinet/update-article', 'id' => $row->id]); ?> </p>
                 <?php endif; ?>
                 <div class="blog_img">
