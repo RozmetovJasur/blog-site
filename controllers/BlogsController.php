@@ -20,8 +20,13 @@ use yii\web\NotFoundHttpException;
  */
 class BlogsController extends Controller
 {
-    public function actionIndex($url)
+    public function actionIndex()
     {
-        return $this->render('index');
+        $list = UserBlogsModel::find()
+            ->all();
+
+        return $this->render('index',[
+            'list' => $list,
+        ]);
     }
 }

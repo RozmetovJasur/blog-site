@@ -3,8 +3,8 @@
  *
  * Created by PhpStorm.
  * User: Rozmetov Jasur ( @rozmetovjasur )
- * Date: 21.11.2019
- * Time: 20:31
+ * Date: 01.12.2019
+ * Time: 19:03
  */
 
 namespace app\models;
@@ -13,28 +13,20 @@ namespace app\models;
 use app\components\ActiveRecord;
 
 /**
-* Class UserBlogsModel
+* Class UserNewsCategoryModel
 * @package app\models
 * @property $user_id
 * @property $name
-* @property $info
+* @property $slug
 * @property $keywords
 * @property $description
-* @property $slug
-* @property $count_article
 * @property $created_at
 * @property $updated_at
-* @property \app\models\UsersModel $user
 */
-class UserBlogsModel extends ActiveRecord
+class UserNewsCategoryModel extends ActiveRecord
 {
     public static function tableName()
     {
-        return 'tr_user_blogs';
-    }
-
-    public function getUser()
-    {
-        return $this->hasOne(UsersModel::class,['id' => 'user_id']);
+        return 'tr_user_news_category';
     }
 }

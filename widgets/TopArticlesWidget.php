@@ -10,6 +10,7 @@
 namespace app\widgets;
 
 
+use app\models\UserArticlesModel;
 use yii\base\Widget;
 
 /**
@@ -25,6 +26,11 @@ class TopArticlesWidget extends Widget
 
     public function run()
     {
-        return $this->render('top-articles');
+        $list = UserArticlesModel::find()
+            ->orderBy(['id' => SORT_ASC])
+            ->all();
+        return $this->render('top-articles',[
+            'list' => $list,
+        ]);
     }
 }

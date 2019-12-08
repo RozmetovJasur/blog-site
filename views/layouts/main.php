@@ -37,7 +37,7 @@ AppAsset::register($this);
                 <div class="blog_right_sidebar">
                     <aside class="single_sidebar_widget search_widget">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search Posts">
+                            <input type="text" class="form-control" placeholder="<?= t("Maqola qidirish"); ?>">
                             <span class="input-group-btn">
                 <button class="btn btn-default" type="button"><i class="lnr lnr-magnifier"></i></button>
                 </span>
@@ -51,13 +51,13 @@ AppAsset::register($this);
                     <aside class="single_sidebar_widget author_widget">
                         <img class="author_img img-fluid" src="/uploads/img/no-photo.jpg" alt="">
                         <h4><?= t("Rozmetov Jasur"); ?></h4>
-                        <p><?= t("Senior web developer"); ?></p>
+                        <p><?= t("Web developer"); ?></p>
                         <p><?= t("Shaxsiy blog"); ?></p>
                         <div class="social_icon">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-github"></i></a>
-                            <a href="#"><i class="fa fa-behance"></i></a>
+                            <a href="https://www.facebook.com/rozmetovjasur/"><i class="fa fa-facebook"></i></a>
+                            <a href="https://twitter.com/rozmetovjasur"><i class="fa fa-twitter"></i></a>
+                            <a href="https://github.com/RozmetovJasur"><i class="fa fa-github"></i></a>
+                            <a href="https://t.me/rozmetovjasur"><i class="fa fa-sticky-note"></i></a>
                         </div>
                         <div class="br"></div>
                     </aside>

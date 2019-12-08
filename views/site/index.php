@@ -1,6 +1,4 @@
 <?php
-use app\helpers\Html;
-use yii\helpers\Url;
 /**
  *
  * Created by PhpStorm.
@@ -9,11 +7,15 @@ use yii\helpers\Url;
  * Time: 19:58
  */
 
+use app\helpers\Html;
+use yii\helpers\Url;
+
 /** @var $tags[] */
 /** @var $blogs[] */
 /** @var $this \yii\web\View */
 /** @var $data \app\components\ActiveDataProvider */
 /** @var $row \app\models\UserArticlesModel */
+
 $user = Yii::$app->user;
 ?>
 <?php if($data->models): ?>
@@ -32,11 +34,11 @@ $user = Yii::$app->user;
                             <?php if(is_array($row->blog_id)): ?>
                                 <?php foreach ($row->blog_id as $key => $value): ?>
                                     <?php if(!isset($blogs[$value]))continue; ?>
-                                    <?= Html::a($blogs[$value]['name'],['tags/index', 'url' => $blogs[$value]['slug'] ], ['class' => 'cat_btn']); ?>
+                                    <?= Html::a($blogs[$value]['name'],['blogs/index', 'url' => $blogs[$value]['slug'] ], ['class' => 'cat_btn']); ?>
                                 <?php endforeach; ?>
                             <?php endif; ?>
                         </div>
-                        <?= Html::a('<h4>'.$row->title.'</h4>',['articles/index', 'url' => $row->slug]); ?>
+                        <?= Html::a('<h4>'.$row->title.'</h4>',['articles/view', 'url' => $row->slug]); ?>
                         <p><?= $row->contentCut; ?></p>
 
                         <div class="cat">
@@ -46,8 +48,9 @@ $user = Yii::$app->user;
                                     <?= Html::a($tags[$value]['name'],['tags/index', 'url' => $tags[$value]['slug'] ], ['class' => 'cat_btn']); ?>
                                 <?php endforeach; ?>
                             <?php endif; ?>
-                            <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> <?= date("d/m/Y H:m:s",strtotime($row->created_at)); ?></a>
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> <?= $row->count_comment; ?></a>
+                            <span class="m-1"><i class="fa fa-calendar" aria-hidden="true"></i> <?= date("d/m/Y H:m:s",strtotime($row->created_at)); ?></span>
+                            <span class="m-1"><i class="fa fa-comments-o" aria-hidden="true"></i> <?= $row->count_comment; ?></span>
+                            <span class="m-1"><i class="fa fa-eye" aria-hidden="true"></i> <?= $row->count_read; ?></span>
                         </div>
                     </div>
                 </div>
@@ -55,4 +58,19 @@ $user = Yii::$app->user;
         </div>
     <?php endforeach; ?>
     <?= \app\widgets\LinkPagerWidget::widget(['pagination' => $data->pagination]); ?>
+<?php else: ?>
+    <p class="alert alert-warning">
+        <?= t("Hozircha maqolalar mavjud emas,lekin siz birinchi bo'lishingiz mumkin."); ?>
+        <?php if(Yii::$app->user->isGuest): ?>
+            <?= t("Buning uchun {enter} yoki {regis}!",[
+                'enter' => Html::a(t("saytga kiring"),['site/login']),
+                'regis' => Html::a(t("ro‘yxatdan o‘ting"),['site/login']),
+            ]); ?>
+        <?php else: ?>
+            <?= t("Yangi  {article} yoki {news} qo'shing!",[
+                'article' => Html::a(t("maqola"),['cabinet/add-article']),
+                'news' => Html::a(t("yangilik"),['cabinet/add-news']),
+            ]); ?>
+        <?php endif; ?>
+    </p>
 <?php endif; ?>

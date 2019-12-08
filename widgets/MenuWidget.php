@@ -63,7 +63,7 @@ class MenuWidget extends Widget
                     "url" => ["site/about"],
                 ],
                 [
-                    "title" => t("Aloqa"),
+                    "title" => t("Bog'lanish"),
                     "icon" => "<i class='fa fa-address-book'></i>",
                     "url" => ["site/contact"],
                 ],

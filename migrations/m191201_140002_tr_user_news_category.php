@@ -3,22 +3,22 @@
 use yii\db\Migration;
 
 /**
- * Class m191116_141002_tr_tags
+ * Class m191201_140002_tr_user_news_category
  */
-class m191116_141002_tr_user_tags extends Migration
+class m191201_140002_tr_user_news_category extends Migration
 {
     /**
      * {@inheritdoc}
      */
     public function safeUp()
     {
-        $this->createTable('tr_user_tags', [
+        $this->createTable('tr_user_news_category', [
             'id' => $this->primaryKey(),
             'user_id' => $this->integer(),
             'name' => $this->string(20),
+            'slug' => $this->string(20),
             'keywords' => $this->string(300),
             'description' => $this->string(500),
-            'slug' => $this->string(20),
             'created_at'=>$this->timestamp()->defaultExpression('CURRENT_TIMESTAMP'),
             'updated_at'=>$this->timestamp()
         ]);
@@ -29,7 +29,7 @@ class m191116_141002_tr_user_tags extends Migration
      */
     public function safeDown()
     {
-        echo "m191116_141002_tr_user_tags cannot be reverted.\n";
+        echo "m191201_140002_tr_user_news_category cannot be reverted.\n";
 
         return false;
     }
@@ -43,7 +43,7 @@ class m191116_141002_tr_user_tags extends Migration
 
     public function down()
     {
-        echo "m191116_141002_tr_tags cannot be reverted.\n";
+        echo "m191201_140002_tr_user_news_category cannot be reverted.\n";
 
         return false;
     }

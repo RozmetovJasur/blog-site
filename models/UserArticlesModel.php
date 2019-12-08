@@ -25,6 +25,8 @@ use yii\helpers\Json;
 * @property $content
 * @property $image
 * @property $slug
+* @property $keywords
+* @property $description
 * @property $count_vote_up
 * @property $count_vote_down
 * @property $count_read
@@ -33,6 +35,7 @@ use yii\helpers\Json;
 * @property $created_at
 * @property $updated_at
 * @property $contentCut
+* @property \app\models\UsersModel $user
 */
 class UserArticlesModel extends ActiveRecord
 {
@@ -120,5 +123,14 @@ class UserArticlesModel extends ActiveRecord
     public function getUser()
     {
         return $this->hasOne(UsersModel::class,['id' => 'user_id']);
+    }
+
+    /**
+     * @return string
+     * @throws \yii\base\InvalidConfigException
+     */
+    public function getCreatedAt()
+    {
+        return Yii::$app->formatter->asDatetime($this->created_at);
     }
 }

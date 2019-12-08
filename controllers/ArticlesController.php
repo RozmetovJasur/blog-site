@@ -9,6 +9,7 @@
 
 namespace app\controllers;
 
+use app\helpers\SeoHelpers;
 use Yii;
 use app\components\ActiveDataProvider;
 use app\components\Controller;
@@ -24,16 +25,19 @@ use yii\web\NotFoundHttpException;
  */
 class ArticlesController extends Controller
 {
-    public function actionIndex()
+    public function actionIndex($url = null)
     {
-        $url = Yii::$app->request->get('url', null);
+        /** @var UserBlogsModel $blog */
         $blog = UserBlogsModel::find()
             ->where(['slug' => $url])
             ->one();
         $query = UserArticlesModel::find();
-
-        if($blog)
-            $query->where(['blog_id' => $blog->id]);
+        if($blog) {
+            $query->where(['like', 'blog_id', $blog->id]);
+            $this->registerMetaTag($blog->keywords, $blog->description);
+        }
+        else
+            $this->registerMetaTag();
 
         $data = new ActiveDataProvider([
             'query' => $query->orderBy(['id' => SORT_ASC]),
@@ -58,11 +62,18 @@ class ArticlesController extends Controller
 
     public function actionView($url)
     {
+        /** @var UserArticlesModel $model */
         $model = UserArticlesModel::find()
             ->andFilterWhere(['slug' => $url])
             ->one();
         if(!$model)
             throw new NotFoundHttpException();
+
+        //seo ni yoqish
+        $this->registerMetaTag($model->keywords, $model->description);
+
+        $model->count_read++;
+        $model->save(false);
 
         $blogs = ArrayHelper::map(UserBlogsModel::find()->all(),'id',function ($row){
             return ['name' => $row->name, 'slug' => $row->slug];

@@ -1,6 +1,4 @@
 <?php
-use app\helpers\Html;
-use yii\helpers\Url;
 /**
  *
  * Created by PhpStorm.
@@ -8,6 +6,9 @@ use yii\helpers\Url;
  * Date: 19.11.2019
  * Time: 19:58
  */
+
+use app\helpers\Html;
+use yii\helpers\Url;
 
 /** @var $tags[] */
 /** @var $blogs[] */
@@ -49,8 +50,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <?= Html::a($tags[$value]['name'],['tags/index', 'url' => $tags[$value]['slug'] ], ['class' => 'cat_btn']); ?>
                                 <?php endforeach; ?>
                             <?php endif; ?>
-                            <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> <?= date("d/m/Y H:m:s",strtotime($row->created_at)); ?></a>
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> <?= $row->count_comment; ?></a>
+                            <span class="m-1"><i class="fa fa-calendar" aria-hidden="true"></i> <?= $row->getCreatedAt(); ?></span>
+                            <span class="m-1"><i class="fa fa-comments-o" aria-hidden="true"></i> <?= $row->count_comment; ?></span>
+                            <span class="m-1"><i class="fa fa-eye" aria-hidden="true"></i> <?= $row->count_read; ?></span>
                         </div>
                     </div>
                 </div>
@@ -58,4 +60,19 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     <?php endforeach; ?>
     <?= \app\widgets\LinkPagerWidget::widget(['pagination' => $data->pagination]); ?>
+<?php else: ?>
+<p class="alert alert-warning">
+    <?= t("Hozircha maqolalar mavjud emas,lekin siz birinchi bo'lishingiz mumkin."); ?>
+    <?php if(Yii::$app->user->isGuest): ?>
+        <?= t("Buning uchun {enter} yoki {regis}!",[
+            'enter' => Html::a(t("saytga kiring"),['site/login']),
+            'regis' => Html::a(t("ro‘yxatdan o‘ting"),['site/login']),
+        ]); ?>
+    <?php else: ?>
+        <?= t("Yangi  {article} yoki {news} qo'shing!",[
+            'article' => Html::a(t("maqola"),['cabinet/add-article']),
+            'news' => Html::a(t("yangilik"),['cabinet/add-news']),
+        ]); ?>
+    <?php endif; ?>
+</p>
 <?php endif; ?>

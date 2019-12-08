@@ -21,7 +21,8 @@
         "yiisoft/yii2-jui": "^2.0",
         "mihaildev/yii2-ckeditor": "^1.0",
         "paulzi/yii2-json-behavior": "^1.0",
-        "kartik-v/yii2-widgets": "^3.4"
+        "kartik-v/yii2-widgets": "^3.4",
+        "yiimaker/yii2-social-share": "~2.1"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

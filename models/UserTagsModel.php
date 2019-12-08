@@ -18,6 +18,8 @@ use yii\helpers\Inflector;
 * @package app\models
 * @property $user_id
 * @property $name
+* @property $keywords
+* @property $description
 * @property $slug
 * @property $created_at
 * @property $updated_at

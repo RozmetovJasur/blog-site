@@ -54,47 +54,20 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
     <div class="news_d_footer">
+        <a href="#"><i class="lnr lnr lnr-heart"></i>Lily and 4 people like this</a>
         <a class="justify-content-center ml-auto" href="#"><i class="lnr lnr lnr-bubble"></i><?= $model->count_comment; ?>  </a>
-        <a class="m-1 justify-content-center ml-auto"><i class="fa fa-calendar" aria-hidden="true"></i> <?= $model->getCreatedAt(); ?></a>
-        <a class="m-1 justify-content-center ml-auto"><i class="fa fa-comments-o" aria-hidden="true"></i> <?= $model->count_comment; ?></a>
-        <a class="m-1 justify-content-center ml-auto"><i class="fa fa-eye" aria-hidden="true"></i> <?= $model->count_read; ?></a>
         <div class="news_socail ml-auto">
-            <?= \ymaker\social\share\widgets\SocialShare::widget([
-                'configurator' => 'socialShare',
-                'url'          => \yii\helpers\Url::to('absolute/route/to/page', true),
-                'title'        => $model->title,
-                'description'  => $model->content,
-                'imageUrl'     => \yii\helpers\Url::to($model->image, true),
-                'linkContainerOptions' => [],
-                'containerOptions' => [],
-            ]); ?>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-youtube-play"></i></a>
+            <a href="#"><i class="fa fa-pinterest"></i></a>
+            <a href="#"><i class="fa fa-rss"></i></a>
         </div>
     </div>
     <div class="comments-area">
         <h4> <?= t("Izohlar"); ?></h4>
         <?php if(!$user->isGuest): ?>
-            <div id="disqus_thread"></div>
-            <script>
-
-                /**
-                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-                /*
-                var disqus_config = function () {
-                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                };
-                */
-                (function() { // DON'T EDIT BELOW THIS LINE
-                    var d = document, s = d.createElement('script');
-                    s.src = 'https://true-uz.disqus.com/embed.js';
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-            <div class="comment-list">
+        <div class="comment-list">
             <div class="single-comment justify-content-between d-flex">
                 <div class="user justify-content-between d-flex">
                     <div class="thumb">

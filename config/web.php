@@ -16,6 +16,37 @@ $config = [
     ],
     'as AppBehavior' => 'app\behaviors\AppBehavior',
     'components' => [
+        'formatter' => [
+            'dateFormat' => 'd/M/Y',
+            'datetimeFormat' => 'd/M/Y H:i:s',
+            'timeFormat' => 'H:i:s',
+            'locale' => 'ru-RU', //your language locale
+            'defaultTimeZone' => 'Asia/Tashkent', // time zone
+        ],
+        'socialShare' => [
+            'class' => \ymaker\social\share\configurators\Configurator::class,
+            'enableIcons' => true,
+            'socialNetworks' => [
+                'facebook' => [
+                    'class' => \ymaker\social\share\drivers\Facebook::class,
+                ],
+                'twitter' => [
+                    'class' => \ymaker\social\share\drivers\Twitter::class,
+                ],
+                'telegram' => [
+                    'class' => \ymaker\social\share\drivers\Telegram::class,
+                ],
+                'whatsapp' => [
+                    'class' => \ymaker\social\share\drivers\WhatsApp::class,
+                ],
+                'vkontakte' => [
+                    'class' => \ymaker\social\share\drivers\Vkontakte::class,
+                ],
+                'odnoklasniki' => [
+                    'class' => \ymaker\social\share\drivers\Odnoklassniki::class,
+                ],
+            ],
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'JdAGdjC4HV1WGSYVowlfa7aq_ZKKz8ry',
