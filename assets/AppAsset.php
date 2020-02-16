@@ -40,7 +40,7 @@ class AppAsset extends AssetBundle
         '/template/vendors/owl-carousel/owl.carousel.min.js',
         '/template/js/jquery.ajaxchimp.min.js',
         '/template/js/mail-script.js',
-        '/template/js/theme.js',
+//        '/template/js/theme.js',
     ];
     public $depends = [
         BootstrapAsset::class,
