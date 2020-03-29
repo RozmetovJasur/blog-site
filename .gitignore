@@ -3,6 +3,7 @@
 
 /runtime
 /web/assets
+/web/uploads
 **-local.php
 
 # netbeans project files
