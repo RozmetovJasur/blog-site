@@ -61,7 +61,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'regis' => Html::a(t("ro‘yxatdan o‘ting"),['site/login']),
             ]); ?>
         <?php else: ?>
-            <?= t("Yangi  {article} yoki {news} qo'shing!",[
+            <?= t("Yangi {article} yoki {news} qo'shing!",[
                 'article' => Html::a(t("maqola"),['cabinet/add-article']),
                 'news' => Html::a(t("yangilik"),['cabinet/add-news']),
             ]); ?>

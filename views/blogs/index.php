@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         </div>
                         <div class="pull-right">
                             <?= $row->user ? $row->user->fi : ""; ?>
-                            <?= $row->created_at; ?>
+                            <?= date("d/m/Y",strtotime($row->created_at)); ?>
                         </div>
                     </div>
                 </div>
@@ -47,7 +47,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'regis' => Html::a(t("ro‘yxatdan o‘ting"),['site/login']),
             ]); ?>
         <?php else: ?>
-            <?= t("Yangi  {article} yoki {news} qo'shing!",[
+            <?= t("Yangi {article} yoki {news} qo'shing!",[
                 'article' => Html::a(t("maqola"),['cabinet/add-article']),
                 'news' => Html::a(t("yangilik"),['cabinet/add-news']),
             ]); ?>

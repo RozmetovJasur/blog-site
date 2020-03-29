@@ -14,7 +14,7 @@
     <h3 class="widget_title"><?= t("Yangi maqolalar"); ?></h3>
     <?php foreach ($list as $row): ?>
     <div class="media post_item">
-        <img src="/template/img/blog/popular-post/post1.jpg" alt="post">
+        <img style="width: 40%;" src="/<?= $row->image; ?>" alt="post">
         <div class="media-body">
             <?= \app\helpers\Html::a($row->title,['articles/view','url' => $row->slug]); ?>
             <p><?= $row->getCreatedAt(); ?></p>

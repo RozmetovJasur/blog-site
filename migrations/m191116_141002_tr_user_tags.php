@@ -15,9 +15,9 @@ class m191116_141002_tr_user_tags extends Migration
         $this->createTable('tr_user_tags', [
             'id' => $this->primaryKey(),
             'user_id' => $this->integer(),
-            'name' => $this->string(20),
-            'keywords' => $this->string(300),
-            'description' => $this->string(500),
+            'name' => $this->string(50),
+            'keywords' => $this->text(),
+            'description' => $this->text(),
             'slug' => $this->string(20),
             'created_at'=>$this->timestamp()->defaultExpression('CURRENT_TIMESTAMP'),
             'updated_at'=>$this->timestamp()

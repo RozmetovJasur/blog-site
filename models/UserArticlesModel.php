@@ -131,6 +131,6 @@ class UserArticlesModel extends ActiveRecord
      */
     public function getCreatedAt()
     {
-        return Yii::$app->formatter->asDatetime($this->created_at);
+        return date("d/m/Y",strtotime($this->created_at));
     }
 }

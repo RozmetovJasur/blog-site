@@ -51,7 +51,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <?php endforeach; ?>
                             <?php endif; ?>
                             <span class="m-1"><i class="fa fa-calendar" aria-hidden="true"></i> <?= $row->getCreatedAt(); ?></span>
-                            <span class="m-1"><i class="fa fa-comments-o" aria-hidden="true"></i> <?= $row->count_comment; ?></span>
+
+                            <?php /**<span class="m-1"><i class="fa fa-comments-o" aria-hidden="true"></i> <?= $row->count_comment; ?></span>*/ ?>
+
                             <span class="m-1"><i class="fa fa-eye" aria-hidden="true"></i> <?= $row->count_read; ?></span>
                         </div>
                     </div>

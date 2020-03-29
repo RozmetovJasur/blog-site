@@ -84,7 +84,11 @@ class CabinetController extends AuthController
                         $model->image->saveAs($fullPath);
                         $model->image = $fullPath;
                     }
+                    else{
+                        $model->image = $model->getOldAttribute('image');
+                    }
                 }
+
                 $model->save();
                 $transaction->commit();
                 Html::alertSuccess(t("Ma'lumotlar muvaffaqiyatli saqlandi."));

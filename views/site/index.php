@@ -48,8 +48,8 @@ $user = Yii::$app->user;
                                     <?= Html::a($tags[$value]['name'],['tags/index', 'url' => $tags[$value]['slug'] ], ['class' => 'cat_btn']); ?>
                                 <?php endforeach; ?>
                             <?php endif; ?>
-                            <span class="m-1"><i class="fa fa-calendar" aria-hidden="true"></i> <?= date("d/m/Y H:m:s",strtotime($row->created_at)); ?></span>
-                            <span class="m-1"><i class="fa fa-comments-o" aria-hidden="true"></i> <?= $row->count_comment; ?></span>
+                            <span class="m-1"><i class="fa fa-calendar" aria-hidden="true"></i> <?= date("d/m/Y",strtotime($row->created_at)); ?></span>
+                            <?php /**<span class="m-1"><i class="fa fa-comments-o" aria-hidden="true"></i> <?= $row->count_comment; ?></span>*/ ?>
                             <span class="m-1"><i class="fa fa-eye" aria-hidden="true"></i> <?= $row->count_read; ?></span>
                         </div>
                     </div>

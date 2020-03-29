@@ -14,13 +14,13 @@ class m191116_115917_tr_users extends Migration
     {
         $this->createTable('tr_users', [
             'id' => $this->primaryKey(),
-            'fname' => $this->string(20),
-            'lname' => $this->string(20),
-            'email' => $this->string(20)->notNull()->unique(),
-            'password' => $this->string()->notNull(),
+            'fname' => $this->string(50),
+            'lname' => $this->string(50),
+            'email' => $this->string(50)->notNull()->unique(),
+            'password' => $this->string(300)->notNull(),
             'active' => $this->smallInteger(1)->defaultValue(0),
             'created_at'=>$this->timestamp()->defaultExpression('CURRENT_TIMESTAMP'),
-            'updated_at'=>$this->timestamp()
+            'updated_at'=>$this->timestamp()->null()
         ]);
     }
 

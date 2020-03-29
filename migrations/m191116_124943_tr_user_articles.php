@@ -19,7 +19,7 @@ class m191116_124943_tr_user_articles extends Migration
             'tag_id' => $this->text(),
             'title' => $this->string(100),
             'content' => $this->text(),
-            'image' => $this->string(200),
+            'image' => $this->string(500),
             'slug' => $this->string(100),
             'keywords' => $this->string(300),
             'description' => $this->string(500),
@@ -29,7 +29,7 @@ class m191116_124943_tr_user_articles extends Migration
             'count_comment' => $this->integer()->defaultValue(0),
             'status' => $this->smallInteger(1)->defaultValue(0),
             'created_at'=>$this->timestamp()->defaultExpression('CURRENT_TIMESTAMP'),
-            'updated_at'=>$this->timestamp()
+            'updated_at'=>$this->timestamp()->null()
         ]);
 
         /**
