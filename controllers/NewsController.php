@@ -25,6 +25,16 @@ use yii\web\NotFoundHttpException;
  */
 class NewsController extends Controller
 {
+    public function behaviors()
+    {
+        return [
+            [
+                'class' => 'yii\filters\PageCache',
+                'only' => ['index','view'],
+                'duration' => 3600,
+            ],
+        ];
+    }
     public function actionIndex()
     {
         $url = Yii::$app->request->get('url', null);

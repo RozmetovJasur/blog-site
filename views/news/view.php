@@ -54,81 +54,32 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
     <div class="news_d_footer">
-        <a href="#"><i class="lnr lnr lnr-heart"></i>Lily and 4 people like this</a>
         <a class="justify-content-center ml-auto" href="#"><i class="lnr lnr lnr-bubble"></i><?= $model->count_comment; ?>  </a>
+        <a class="m-1 justify-content-center ml-auto"><i class="fa fa-calendar" aria-hidden="true"></i> <?= $model->getCreatedAt(); ?></a>
+        <?php /**<a class="m-1 justify-content-center ml-auto"><i class="fa fa-comments-o" aria-hidden="true"></i> <?= $model->count_comment; ?></a>*/ ?>
+        <a class="m-1 justify-content-center ml-auto"><i class="fa fa-eye" aria-hidden="true"></i> <?= $model->count_read; ?></a>
         <div class="news_socail ml-auto">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-youtube-play"></i></a>
-            <a href="#"><i class="fa fa-pinterest"></i></a>
-            <a href="#"><i class="fa fa-rss"></i></a>
+            <?= \ymaker\social\share\widgets\SocialShare::widget([
+                'configurator' => 'socialShare',
+                'url'          => 'http://true.uz/'.\yii\helpers\Url::to(['articles/view', 'url' => $model->slug]),
+                'title'        => $model->title,
+                'description'  => $model->content,
+                'imageUrl'     => \yii\helpers\Url::to($model->image, true),
+                'linkContainerOptions' => [],
+                'containerOptions' => [],
+            ]); ?>
         </div>
     </div>
     <div class="comments-area">
         <h4> <?= t("Izohlar"); ?></h4>
-        <?php if(!$user->isGuest): ?>
-        <div class="comment-list">
-            <div class="single-comment justify-content-between d-flex">
-                <div class="user justify-content-between d-flex">
-                    <div class="thumb">
-                        <img src="img/blog/c1.jpg" alt="">
-                    </div>
-                    <div class="desc">
-                        <h5><a href="#">Emilly Blunt</a></h5>
-                        <p class="date">December 4, 2017 at 3:12 pm </p>
-                        <p class="comment">
-                            Never say goodbye till the end comes!
-                        </p>
-                    </div>
-                </div>
-                <div class="reply-btn">
-                    <a href="#" class="btn-reply text-uppercase">reply</a>
-                </div>
-            </div>
-        </div>
-        <div class="comment-list left-padding">
-            <div class="single-comment justify-content-between d-flex">
-                <div class="user justify-content-between d-flex">
-                    <div class="thumb">
-                        <img src="img/blog/c2.jpg" alt="">
-                    </div>
-                    <div class="desc">
-                        <h5><a href="#">Elsie Cunningham</a></h5>
-                        <p class="date">December 4, 2017 at 3:12 pm </p>
-                        <p class="comment">
-                            Never say goodbye till the end comes!
-                        </p>
-                    </div>
-                </div>
-                <div class="reply-btn">
-                    <a href="#" class="btn-reply text-uppercase">reply</a>
-                </div>
-            </div>
-        </div>
-        <div class="comment-list">
-            <div class="single-comment justify-content-between d-flex">
-                <div class="user justify-content-between d-flex">
-                    <div class="thumb">
-                        <img src="img/blog/c5.jpg" alt="">
-                    </div>
-                    <div class="desc">
-                        <h5><a href="#">Ina Hayes</a></h5>
-                        <p class="date">December 4, 2017 at 3:12 pm </p>
-                        <p class="comment">
-                            Never say goodbye till the end comes!
-                        </p>
-                    </div>
-                </div>
-                <div class="reply-btn">
-                    <a href="#" class="btn-reply text-uppercase">reply</a>
-                </div>
-            </div>
-        </div>
-        <?php else: ?>
-        <?= t("Fikr bildirish uchun {enter} yoki {regis}!",[
-                'enter' => Html::a(t("saytga kiring"),['site/login']),
-                'regis' => Html::a(t("ro‘yxatdan o‘ting"),['site/login']),
-            ]); ?>
-        <?php endif; ?>
+        <div id="disqus_thread"></div>
+        <script>
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://true-uz.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
     </div>
 </div>

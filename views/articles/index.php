@@ -64,7 +64,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= \app\widgets\LinkPagerWidget::widget(['pagination' => $data->pagination]); ?>
 <?php else: ?>
 <p class="alert alert-warning">
-    <?= t("Hozircha maqolalar mavjud emas,lekin siz birinchi bo'lishingiz mumkin."); ?>
+    <?= t("Hozircha maqolalar mavjud emas."); ?>
+    <?php /**
     <?php if(Yii::$app->user->isGuest): ?>
         <?= t("Buning uchun {enter} yoki {regis}!",[
             'enter' => Html::a(t("saytga kiring"),['site/login']),
@@ -76,5 +77,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'news' => Html::a(t("yangilik"),['cabinet/add-news']),
         ]); ?>
     <?php endif; ?>
+ * */ ?>
 </p>
 <?php endif; ?>

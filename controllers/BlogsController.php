@@ -20,6 +20,16 @@ use yii\web\NotFoundHttpException;
  */
 class BlogsController extends Controller
 {
+    public function behaviors()
+    {
+        return [
+            [
+                'class' => 'yii\filters\PageCache',
+                'only' => ['index'],
+                'duration' => 3600,
+            ],
+        ];
+    }
     public function actionIndex()
     {
         $list = UserBlogsModel::find()

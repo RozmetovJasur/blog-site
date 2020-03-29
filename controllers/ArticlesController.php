@@ -25,6 +25,17 @@ use yii\web\NotFoundHttpException;
  */
 class ArticlesController extends Controller
 {
+    public function behaviors()
+    {
+        return [
+            [
+                'class' => 'yii\filters\PageCache',
+                'only' => ['index','view'],
+                'duration' => 3600,
+            ],
+        ];
+    }
+
     public function actionIndex($url = null)
     {
         /** @var UserBlogsModel $blog */
