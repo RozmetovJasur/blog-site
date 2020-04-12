@@ -85,7 +85,7 @@ class ArticlesController extends Controller
 
         $model->count_read++;
         $model->save(false);
-        $model->content = str_replace('<cut>','',$model->content);
+        $model->content = str_replace('&lt;cut&gt;','',$model->content);
 
         $blogs = ArrayHelper::map(UserBlogsModel::find()->all(),'id',function ($row){
             return ['name' => $row->name, 'slug' => $row->slug];
