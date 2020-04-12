@@ -25,16 +25,16 @@ use yii\web\NotFoundHttpException;
  */
 class ArticlesController extends Controller
 {
-    public function behaviors()
-    {
-        return [
-            [
-                'class' => 'yii\filters\PageCache',
-                'only' => ['index','view'],
-                'duration' => 3600,
-            ],
-        ];
-    }
+//    public function behaviors()
+//    {
+//        return [
+//            [
+//                'class' => 'yii\filters\PageCache',
+//                'only' => ['index','view'],
+//                'duration' => 3600,
+//            ],
+//        ];
+//    }
 
     public function actionIndex($url = null)
     {
@@ -85,6 +85,7 @@ class ArticlesController extends Controller
 
         $model->count_read++;
         $model->save(false);
+        $model->content = str_replace('<cut>','',$model->content);
 
         $blogs = ArrayHelper::map(UserBlogsModel::find()->all(),'id',function ($row){
             return ['name' => $row->name, 'slug' => $row->slug];

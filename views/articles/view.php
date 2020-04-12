@@ -17,6 +17,7 @@ $user = Yii::$app->user;
 $this->title = $model->title;
 $this->params['breadcrumbs'][] =['label' => t("Maqolalar"), 'url' => ['articles/index']];
 $this->params['breadcrumbs'][] = $this->title;
+$model->tag_id = \yii\helpers\Json::decode($model->tag_id);
 ?>
 <div class="main_blog_details">
     <div class="user_details">
